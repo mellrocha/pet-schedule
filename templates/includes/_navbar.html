@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="{{ url_for('index') }}">Pet Schedule</a>
+    </div>
+    <div class="navbar-menu">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('profile') }}">Meu Perfil</a>
+            <a href="{{ url_for('pet_register') }}">Cadastrar Pet</a>
+            <a href="{{ url_for('schedule') }}">Agendamento</a>
+            <a href="{{ url_for('procedures') }}">Procedimentos</a>
+            <a href="{{ url_for('logout') }}">Sair</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Cadastro</a>
+        {% endif %}
+    </div>
+</nav>
